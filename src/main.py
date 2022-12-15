@@ -17,6 +17,7 @@ SCREEN_ITEMS = {
             "cyan": "\033[36m",
             "yellow": "\033[33m",
         },
+        "selected": ""
     },
     "background-color": {
         "name": "Background Color",
@@ -30,6 +31,7 @@ SCREEN_ITEMS = {
             "cyan": "\033[46m",
             "yellow": "\033[43m",
         },
+        "selected": ""
     },
     "text-stlye": {
         "name": "Text Style",
@@ -39,18 +41,17 @@ SCREEN_ITEMS = {
             "underline": "\033[4m",
             "strikethrough": "\033[9m",
         },
+        "selected": ""
     }
 }
 
 
-selection = []
-def print_selection():
-    if len(selection) <= 0: return
-
-    print("│\n│", "\033[1mSELECTED OPTIONS\033[0m") # title
-    for item in selection:
-        print("┝", item)
-        time.sleep(0.1)
+def print_selection(current_screen):
+    selection = SCREEN_ITEMS[current_screen]["selected"]
+    if selection:
+        print(SCREEN_ITEMS[current_screen]["items"][selection], selection, "\033[0m")
+    else:
+        print() # we need a linebreak
 
 
 def push_screen(key = ""):
@@ -63,10 +64,10 @@ def push_screen(key = ""):
     if not key:
         print("│", "\033[1mMAIN MENU\033[0m", "\n│") # title
         for index, keys in enumerate(list(SCREEN_ITEMS.keys())):
-            print(f"┝ {index + 1})", SCREEN_ITEMS[keys]["name"])
+            print(f"┝ {index + 1})", SCREEN_ITEMS[keys]["name"], end="")
+            print_selection(keys)
             time.sleep(0.1)
 
-        print_selection()
 
         print("│\n┝", "0) Done")
         print("└────────────────────────────")
@@ -103,9 +104,8 @@ def handle_navigation(current_screen):
                 if not choice - 1 in range(len(keys)):
                     raise ValueError
                 
-                # print("\033[H" f"\033[{choice + 4}E" "\033[4m", end="")
-                print(keys[choice - 1], "selected")
-                selection.append(keys[choice - 1])
+                print(SCREEN_ITEMS[current_screen]["name"] + ":", keys[choice - 1], "selected")
+                SCREEN_ITEMS[current_screen]["selected"] = keys[choice - 1]
                 time.sleep(1)
                 push_screen()
 
