@@ -83,6 +83,19 @@ def print_selection(current_screen):
         print() # we need a linebreak if we got no selection
 
 
+# This funny funtion uses some escape code trickery to place the cursor
+# where we want to draw the window borders. 
+# It will draw the right (and left) border for the NEXT line
+def draw_right_window_border(also_draw_left = False):
+    if also_draw_left:
+        # draw left border and then reset cursor to line start
+        print("│", end="\033[0G")
+    # move cursor X chars to right and draw border
+    print(f"\033[31C│", end="")
+    # move cursor to line start
+    print("\033[0G", end="\n" if also_draw_left else "")
+
+
 # Handle all the screen rendering stuff
 def push_screen(screen_key = ""):
     # This is used to cleanup before we display a new screen
@@ -93,26 +106,36 @@ def push_screen(screen_key = ""):
 
     # home screen
     if not screen_key or screen_key == "home":
-        print("│", "\033[1mMAIN MENU\033[0m", "\n│")
+        draw_right_window_border()
+        print("│", "\033[1mMAIN MENU\033[0m")
+        # we want to have an empty line thus we need a left border as well
+        draw_right_window_border(also_draw_left=True)
         for index, keys in enumerate(SCREEN_ITEMS.keys()):
+            draw_right_window_border()
             print(f"┝ {index + 1})", SCREEN_ITEMS[keys]["name"], end="")
             print_selection(keys)
             time.sleep(0.1)
 
-
-        print("│\n┝", "0) Get Code")
-        print("└────────────────────────────")
+        draw_right_window_border(also_draw_left=True)
+        draw_right_window_border()
+        print("┝", "0) Get Code")
+        print("└──────────────────────────────┘")
         handle_navigation("home")
 
     # all other screens
     else:
-        print("│\033[1m", SCREEN_ITEMS[screen_key]["name"], "\033[0m\n│")
+        draw_right_window_border()
+        print("│\033[1m", SCREEN_ITEMS[screen_key]["name"], "\033[0m")
+        draw_right_window_border(also_draw_left=True)
         for index, (name, code) in enumerate(SCREEN_ITEMS[screen_key]["items"].items()):
+            draw_right_window_border()
             print(f"┝ {index + 1})", make_escaped_text([code], "▆"), name)
             time.sleep(0.05)
 
-        print("│\n┝", "0) Back")
-        print("└────────────────────────────")
+        draw_right_window_border(also_draw_left=True)
+        draw_right_window_border()
+        print("┝", "0) Back")
+        print("└──────────────────────────────┘")
         handle_navigation(screen_key)
 
 
@@ -157,9 +180,9 @@ def handle_navigation(current_screen):
 
 
 # header
-print("┌────────────────────────────┐")
-print("│ \033[33;1mANSI Escape Code Generator\033[0m │")
-print("├────────────────────────────┘")
+print("┌──────────────────────────────┐")
+print("│  \033[33;1mANSI Escape Code Generator\033[0m  │")
+print("├──────────────────────────────┤")
 time.sleep(0.1)
 
 # home screen
