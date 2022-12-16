@@ -94,7 +94,7 @@ def push_screen(screen_key = ""):
     # home screen
     if not screen_key or screen_key == "home":
         print("│", "\033[1mMAIN MENU\033[0m", "\n│")
-        for index, keys in enumerate(list(SCREEN_ITEMS.keys())):
+        for index, keys in enumerate(SCREEN_ITEMS.keys()):
             print(f"┝ {index + 1})", SCREEN_ITEMS[keys]["name"], end="")
             print_selection(keys)
             time.sleep(0.1)
@@ -107,8 +107,8 @@ def push_screen(screen_key = ""):
     # all other screens
     else:
         print("│\033[1m", SCREEN_ITEMS[screen_key]["name"], "\033[0m\n│")
-        for index, item in enumerate(list(SCREEN_ITEMS[screen_key]["items"].items())):
-            print(f"┝ {index + 1})", make_escaped_text([item[1]], "▆"), item[0])
+        for index, (name, code) in enumerate(SCREEN_ITEMS[screen_key]["items"].items()):
+            print(f"┝ {index + 1})", make_escaped_text([code], "▆"), name)
             time.sleep(0.05)
 
         print("│\n┝", "0) Back")
