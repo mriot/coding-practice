@@ -154,8 +154,6 @@ def handle_navigation(current_screen):
         except ValueError:
             print("Please choose a valid option")
             continue
-        
-        break # on every successful screen transition
 
 
 # header
