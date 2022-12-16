@@ -118,7 +118,12 @@ def push_screen(screen_key = ""):
 
         draw_right_window_border(also_draw_left=True)
         draw_right_window_border()
-        print("┝", "0) Get Code")
+        print("┝", "9)", make_escaped_text(["31"], "Reset"))
+        time.sleep(0.1)
+        draw_right_window_border(also_draw_left=True)
+        draw_right_window_border()
+        print("┝", "0)", make_escaped_text(["32"], "Get Code"))
+        time.sleep(0.1)
         print("└──────────────────────────────┘")
         handle_navigation("home")
 
@@ -151,6 +156,10 @@ def handle_navigation(current_screen):
                 if choice == 0:
                     print("\n", get_final_code(), "\n")
                     continue
+                if choice == 9:
+                    for screen_key in SCREEN_ITEMS.keys():
+                        SCREEN_ITEMS[screen_key]["selected"] = ""
+                    push_screen()
 
                 # check if choice is valid
                 keys = list(SCREEN_ITEMS.keys())
