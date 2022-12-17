@@ -11,7 +11,7 @@ Small projects in different languages to learn and have some fun
 ## JavaScript
 
 - [Brick breaker game (Typescript)](https://github.com/mriot/brick-breaker) 2019
-- Particle-storm thingy 2019
+- [Particle-storm thingy](/particle-storm) 2019
 - Mastermind game (Svelte)
 - Stackshare query tool (Node.js)
 
