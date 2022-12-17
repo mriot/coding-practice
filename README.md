@@ -9,7 +9,7 @@ Small projects in different languages to learn and have some fun
 
 ## JavaScript
 
-- Brick breaker game (Typescript)
+- [Brick breaker game (Typescript)](https://github.com/mriot/brick-breaker)
 - Particle-storm thingy
 - Mastermind game (Svelte)
 - Stackshare query tool (Node.js)
