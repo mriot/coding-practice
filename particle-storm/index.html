@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>Canvas</title>
+    <title>Particles</title>
     <script src="particle-storm.js"></script>
     <style>
       html,
@@ -11,12 +11,35 @@
         height: 100%;
         margin: 0;
         padding: 0;
-        background: #161618;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fff;
+        background-color: #161618;
         overflow: hidden;
+      }
+
+      body:hover #controls {
+        opacity: 0.8;
+      }
+
+      #controls {
+        position: absolute;
+        top: 0;
+        padding: 1em;
+        opacity: 0;
+        transition: all 200ms;
+      }
+
+      canvas {
+        height: 100%;
       }
     </style>
   </head>
   <body>
     <canvas id="canvas"></canvas>
+    <div id="controls">
+      Click anywhere to spawn new particles<br /><br />
+      Wire length:<br />
+      <input type="range" value="400" max="700" min="0" id="wire-length" />
+    </div>
   </body>
 </html>

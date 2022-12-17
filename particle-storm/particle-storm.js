@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("#wire-length").addEventListener("change", (event) => {
+    vertices.maxWireDist = event.target.value;
+  });
+
   const canvas = document.querySelector("#canvas");
   const dimensions = {
     width: window.innerWidth,
@@ -15,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const PaintCanvas = () => {
-    ctx.fillStyle = "#333";
+    ctx.fillStyle = "#000";
     ctx.fillRect(0, 0, dimensions.width, dimensions.height);
   };
 
@@ -30,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.radius = radius;
 
       this.draw = () => {
-        ctx.fillStyle = "#111";
+        ctx.fillStyle = "#fff";
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
         ctx.fill();
@@ -96,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
             vertices.arcs[i].y,
             vertices.arcs[j].x,
             vertices.arcs[j].y,
-            `rgba(0, 0, 0, ${1 - fraction})`
+            `rgba(255, 0, 0, ${1 - fraction})`
           );
         }
 
