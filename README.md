@@ -11,9 +11,8 @@ Small projects in different languages to learn and have some fun
 
 - [Brick breaker game (Typescript)](https://github.com/mriot/brick-breaker) 2019
 - [Particle-storm thingy](/particle-storm) 2019
-- Mastermind game (Svelte)
+- [Mastermind game](https://github.com/mriot/mastermind) (Svelte)
 
 ## C#
 
 - [FNV algorithm](https://github.com/mriot/jubjub/blob/master/fnv-algo.cs) ([Reverse Engineering project](https://github.com/mriot/jubjub)) 2021
-- Guild Wars 2 addon updater
