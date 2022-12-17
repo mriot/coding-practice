@@ -24,12 +24,13 @@
   <img src="https://user-images.githubusercontent.com/24588573/208175375-6889962c-6248-4779-bb87-38b866351c19.png" width="300">
 </details>
 
+## Todo
+
+- Make it work on all platforms/terminals (made on windows)
+- Better style preview for background-color and text-styles
+
 ## Resources
 
 - [ANSI Escape Sequences Cheat Sheet](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797)
 - [ANSI escape code Wiki page](https://en.wikipedia.org/wiki/ANSI_escape_code)
 - [ANSI escape code generator](https://ansi.gabebanks.net/)
-
----
-
-Made for windows, may not work for all platforms/terminals
