@@ -32,7 +32,7 @@ class TicTacToe:
             self.print_board()
             self.handle_input()
             self.check()
-            #self.current_player = "x" if self.current_player == "o" else "o"
+            self.current_player = "x" if self.current_player == "o" else "o"
 
     def check(self):
         # win if all three in list the same
