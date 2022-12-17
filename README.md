@@ -16,5 +16,5 @@ Small projects in different languages to learn and have some fun
 
 ## C#
 
-- FNV algorithm (Reverse Engineering project)
+- [FNV algorithm](https://github.com/mriot/jubjub/blob/master/fnv-algo.cs) ([Reverse Engineering project](https://github.com/mriot/jubjub))
 - Guild Wars 2 addon updater
