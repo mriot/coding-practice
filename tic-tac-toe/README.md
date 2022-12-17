@@ -5,7 +5,7 @@
 <img src="https://user-images.githubusercontent.com/24588573/208175375-6889962c-6248-4779-bb87-38b866351c19.png" width="300" alt="Main menu with selection and code">
 
 <details>
-  <summary>More images</summary>
+  <summary>👀 More images</summary>
   <br>
   
   Main menu  
