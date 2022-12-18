@@ -14,4 +14,5 @@ jobs:
         server: riotcoding.lima-ftp.de
         username: riotcoding
         password: ${{ secrets.RIOTCODING_FTP_PASS }}
-        dry-run: true
+        server-dir: ./lorem
+        dry-run: false
