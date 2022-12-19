@@ -16,3 +16,12 @@ jobs:
         password: ${{ secrets.FTP_PASS }}
         server-dir: ./test/
         local-dir: ./particle-storm/
+        
+    - name: 📂 Sync files 2
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: riotcoding.lima-ftp.de
+        username: riotcoding
+        password: ${{ secrets.FTP_PASS }}
+        server-dir: ./test-lorem/
+        local-dir: ./wallpaper-finder/
