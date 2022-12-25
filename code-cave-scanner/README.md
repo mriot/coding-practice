@@ -19,13 +19,6 @@ A command line tool to scan binaries for [Code caves](https://en.wikipedia.org/w
 Where `path_to_program.exe` is the path to the executable file you want to scan, and `300` is the minimum size in bytes that the code cave should have.
 
 
-## Todo
-
-- Add error handling for invalid file paths and invalid minimum size inputs
-- Implement multi-threading to speed up the scanning process
-- Add more color to the output to make it more visually appealing
-
-
 ## Resources
 
 For this project I decided to pair-program with ChatGPT. I wanted to try it for quite some time now and what can I say. I am just blown away!  
