@@ -38,33 +38,46 @@ def find_code_caves(filename, min_size):
             # skip to end of code cave since we already scanned the bytes
             i = j
     except KeyboardInterrupt:
+        # This try-except block allows the keyboard interrupt to prematurely exit the scan 
+        # and display the code caves found up to that point.
         ...
 
     return code_caves
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: python main.py <filename> [min_size = 100]")
-        sys.exit(1)
+    try:
+        filename = sys.argv[1]
+
+        min_size = int(sys.argv[2] if len(sys.argv) > 2 else 100)
+        if min_size <= 0:
+            raise ValueError
+        
+        code_caves = find_code_caves(filename, min_size)
+        code_caves.sort(key=lambda x: x[1], reverse=True)
+
+        os.system("cls" if os.name == "nt" else "clear")
+        
+        if len(code_caves) < 1:
+            print(f"No code caves were found with a size of at least {min_size} bytes.")
+        else:
+            print("Address".ljust(12), "Size")
+            print("-" * 20)
+            for cave in code_caves:
+                print(str(cave[0]).ljust(12), f"{cave[1]}")
+            print(f"\nFound {len(code_caves)} code caves with a minimum size of {min_size} bytes.")
     
-    filename = sys.argv[1]
-    min_size = sys.argv[2] if len(sys.argv) > 2 else 100
-
-    code_caves = find_code_caves(filename, min_size)
-
-    code_caves.sort(key=lambda x: x[1], reverse=True)
-
-    os.system("cls" if os.name == "nt" else "clear")
+    except IndexError:
+        print("Error: Please specify the path to a file as the first argument.")
     
-    if len(code_caves) < 1:
-        print(f"Found no code caves with the desired size of {min_size} bytes. :<\033")
-    else:
-        print("Address".ljust(12), "Size")
-        print("-" * 20)
-        for cave in code_caves:
-            print(str(cave[0]).ljust(12), f"{cave[1]}")
-        print(f"\nFound {len(code_caves)} code caves with a minimum size of {min_size} bytes.")
+    except ValueError:
+        print("Error: The minimum size of the code cave must be a number greater than 0.")
+
+    except FileNotFoundError:
+        print(f"Error: The file '{filename}' could not be found. Please specify a valid path to a file.")
+
+    except IsADirectoryError:
+        print(f"Error: '{filename}' is a directory. Please specify a valid path to a file.")
 
 
 main()
