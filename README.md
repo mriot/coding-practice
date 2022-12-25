@@ -4,6 +4,7 @@ Small projects in different languages to learn and have some fun
 
 ## Python
 
+- [CLI code cave scanner](/code-cave-scanner) 2022
 - [CLI ANSI escape code generator](/ansi-escape-code-generator) 2022
 - [CLI tic-tac-toe game](/tic-tac-toe) 2022
 
