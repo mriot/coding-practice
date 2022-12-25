@@ -1,28 +1,32 @@
 # Code Cave Scanner
 
-### CLI tool to scan binaries for [Code Caves](https://en.wikipedia.org/wiki/Code_cave)
+A command line tool to scan binaries for [Code caves](https://en.wikipedia.org/wiki/Code_cave) and find suitable locations to inject custom [ASM code](https://en.wikipedia.org/wiki/Assembly_language).
 
-<img src="https://user-images.githubusercontent.com/24588573/208175375-6889962c-6248-4779-bb87-38b866351c19.png" width="300" alt="Main menu with selection and code">
+<img width="762" alt="Screenshot of code cave scanner in action" src="https://user-images.githubusercontent.com/24588573/209455547-2d3fe932-8e3b-4bef-9e6c-42f5030dceec.png">
 
-## About this project
 
-Once again I fell in love with game hacking and decided to take everything a step further this time.  
-Using [code caves](https://en.wikipedia.org/wiki/Code_cave) you can inject your custom [ASM code](https://en.wikipedia.org/wiki/Assembly_language) into almost any executable.
-Since code caves are usally just "empty" parts within a file (e.g. 0x0 bytes) I decided to write a little script to help me find a fitting cave.
+## Features
 
-Also for this project I decided to pair-program with ChatGPT. I wanted to try it for quite some time now and what can I say. I am just blown away!  
-I literally didn't use any other resource than ChatGPT when questions about Python popped up or when I just couldn't find the reason for a small bug.
+- Scan any executable file for code caves of a specified size or larger
+- Sort code caves by size, from largest to smallest
+- Print the address and size of each code cave found
 
-# Usage
 
-`python main.py path_to_program.exe 300` where 300 is the size in bytes the code cave should have.
+## Usage
+
+> `python main.py path_to_program.exe 300`
+
+Where `path_to_program.exe` is the path to the executable file you want to scan, and `300` is the minimum size in bytes that the code cave should have.
+
 
 ## Todo
 
-- Error handling
-- Multi-threading
-- More colors!
+- Add error handling for invalid file paths and invalid minimum size inputs
+- Implement multi-threading to speed up the scanning process
+- Add more color to the output to make it more visually appealing
+
 
 ## Resources
 
-- [ChatGPT](https://openai.com/blog/chatgpt/)
+For this project I decided to pair-program with ChatGPT. I wanted to try it for quite some time now and what can I say. I am just blown away!  
+- [ChatGPT](https://openai.com/blog/chatgpt/) for providing helpful guidance and assistance during the development of this project.
