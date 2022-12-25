@@ -45,11 +45,11 @@ def find_code_caves(filename, min_size):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python find_code_caves.py <filename> [min_size = 10]")
+        print("Usage: python main.py <filename> [min_size = 100]")
         sys.exit(1)
     
     filename = sys.argv[1]
-    min_size =  sys.argv[2] or 1
+    min_size = sys.argv[2] if len(sys.argv) > 2 else 100
 
     code_caves = find_code_caves(filename, min_size)
 
