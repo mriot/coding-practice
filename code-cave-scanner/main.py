@@ -64,7 +64,7 @@ def main():
         print("-" * 20)
         for cave in code_caves:
             print(str(cave[0]).ljust(12), f"{cave[1]}")
-        print(f"\nFound {len(code_caves)} code caves with a minimum size of {min_size} bytes. Sorted from big to small.")
+        print(f"\nFound {len(code_caves)} code caves with a minimum size of {min_size} bytes.")
 
 
 main()
