@@ -11,7 +11,7 @@ def find_code_caves(filename, min_size):
         # cache
         file_data_length = len(file_data)
 
-        # a list of dicts that store the size and addr of the code caves
+        # a list of tuples that store the addr and size of the code caves
         code_caves = []
 
         # searching for code caves
@@ -19,13 +19,14 @@ def find_code_caves(filename, min_size):
         while i < file_data_length:
             print(f"Scanning file: {int(100 / file_data_length * i)} %  |  {len(code_caves)} code caves found", end="\r")
 
+            # we're only interested in 0x00 code caves
             if file_data[i] != 0x0:
                 i += 1
                 continue
             
             size = 0
 
-            # loop over the following bytes finding end of code cave
+            # loop over the following bytes finding the end of the code cave
             j = i
             while j < file_data_length and file_data[j] == 0x0:
                 size += 1
@@ -63,8 +64,8 @@ def main():
         else:
             print("Address".ljust(12), "Size")
             print("-" * 20)
-            for cave in code_caves:
-                print(str(cave[0]).ljust(12), f"{cave[1]}")
+            for (address, size) in code_caves:
+                print(str(address).ljust(12), f"{size}")
             print(f"\nFound {len(code_caves)} code caves with a minimum size of {min_size} bytes.")
     
     except IndexError:
