@@ -2,7 +2,8 @@
 
 ### CLI tool to scan binaries for [Code Caves](https://en.wikipedia.org/wiki/Code_cave)
 
-<img src="https://user-images.githubusercontent.com/24588573/208175375-6889962c-6248-4779-bb87-38b866351c19.png" width="300" alt="Main menu with selection and code">
+
+<img width="762" alt="Screenshot 2022-12-25 at 02 53 44" src="https://user-images.githubusercontent.com/24588573/209455102-221befac-e967-4b22-9876-3ac9b7cae937.png">
 
 ## About this project
 
@@ -16,6 +17,7 @@ I literally didn't use any other resource than ChatGPT when questions about Pyth
 # Usage
 
 `python main.py path_to_program.exe 300` where 300 is the size in bytes the code cave should have.
+
 
 ## Todo
 
