@@ -18,6 +18,8 @@ A command line tool to scan binaries for [Code caves](https://en.wikipedia.org/w
 
 Where `path_to_program.exe` is the path to the executable file you want to scan, and `300` is the minimum size in bytes that the code cave should have.
 
+Note that this script searches for code caves within all sections of the binary, not just the executable section.
+
 
 ## Resources
 
