@@ -14,10 +14,17 @@ def find_code_caves(filename, min_size):
         # a list of tuples that store the addr and size of the code caves
         code_caves = []
 
-        # searching for code caves
         i = 0
+        prev_percent = 0
+        
+        # searching for code caves
         while i < file_data_length:
-            print(f"Scanning file: {int(100 / file_data_length * i)} %  |  {len(code_caves)} code caves found", end="\r")
+            percent = int(100 / file_data_length * i)
+
+            # only print when percent updates to reduce overhead and drastically improve performance
+            if (percent != prev_percent):
+                print(f"Scanning file: {percent} %  |  {len(code_caves)} code caves found", end="\r")
+                prev_percent = percent
 
             # we're only interested in 0x00 code caves
             if file_data[i] != 0x0:
