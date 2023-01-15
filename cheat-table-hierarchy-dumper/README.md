@@ -2,6 +2,8 @@
 
 A command-line tool for dumping the hierarchical structure of a cheat table.
 
+Note: You need to specify the path to your Cheat Table in the code.
+
 <pre>
 SCRIPTS ▼
 ├─ INTERFACE ▼
