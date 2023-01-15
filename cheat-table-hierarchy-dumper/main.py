@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 
-tree = ET.parse("SWBF.CT")
+tree = ET.parse("PATH_TO_CHEAT_TABLE.CT")
 root = tree.getroot()
 
 entries_root = root.find("CheatEntries")
