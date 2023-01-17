@@ -1,4 +1,8 @@
 import xml.etree.ElementTree as ET
+import sys
+
+# allow output redirect (>) into files on windows
+sys.stdout.reconfigure(encoding="utf-8")
 
 tree = ET.parse("PATH_TO_CHEAT_TABLE.CT")
 root = tree.getroot()
