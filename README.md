@@ -5,9 +5,9 @@ A collection of entertaining and educational mini-projects in various programmin
 ## Python
 
 - [CLI code cave scanner](/code-cave-scanner) - Scan binaries for code caves, small empty sections of code that can be used for code injection. (2022)
+- [CLI cheat table hierarchy dumper](/cheat-table-hierarchy-dumper) - A structure dumper for cheat tables. (2023)
 - [CLI ANSI escape code generator](/ansi-escape-code-generator) - Generate ANSI escape codes to change text color and formatting in the terminal. (2022)
 - [CLI tic-tac-toe game](/tic-tac-toe) - A simple terminal-based Tic-Tac-Toe game. (2022)
-- [CLI cheat table hierarchy dumper](/cheat-table-hierarchy-dumper) - A simple structure dumper for cheat tables. (2023)
 
 ## JavaScript
 
