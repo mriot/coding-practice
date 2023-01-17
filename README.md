@@ -11,13 +11,15 @@ A collection of entertaining and educational mini-projects in various programmin
 
 ## JavaScript
 
-- [Brick breaker game](https://github.com/mriot/brick-breaker) - A classic brick breaker game implemented in Typescript. (2019)
 - [Particle-storm thingy](/particle-storm) - I don't even know what it is. But it's pretty. (2019)
+- [Brick breaker game](https://github.com/mriot/brick-breaker) - A classic brick breaker game implemented in Typescript. (2019)
+- [Wallpaper finder](/wallpaper-finder) - Search for wallpapers by keywords using the [Unsplash](https://unsplash.com/) API. (2021)
 - Mastermind - A reimplementation of the popular code-breaking game, with a modern interface on top of electron. (2022)
   - Successor to my university project: <https://mastermind.riotcoding.com/> (2017)
-- [Wallpaper finder](/wallpaper-finder) - Search for wallpapers by keywords using the [Unsplash](https://unsplash.com/) API. (2021)
 
+<!--
 ## C#
 
 - FNV Algorithm - Implementation of the FNV hash algorithm. (2021)
-  - Part of the 'JubJub' easter egg [research project](https://github.com/mriot/jubjub).
+  - Part of the 'JubJub' easter egg research project.
+-->
