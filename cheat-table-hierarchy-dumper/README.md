@@ -2,7 +2,15 @@
 
 A command-line tool for dumping the hierarchical structure of a cheat table.
 
-Note: You need to specify the path to your Cheat Table in the code.
+## Usage
+
+> `python main.py path/to/cheat-table.ct`
+
+You can also dump the output into a file:
+
+> `python main.py path/to/cheat-table.ct > ct_dump.txt`
+
+## Example output
 
 <pre>
 SCRIPTS ▼
@@ -35,6 +43,7 @@ SCRIPTS ▼
 │   │   ├─ Chat input fix
 │   │   └─ Enable TAB key support
 │   ├─ Disable crosshair fade
+│   ├─ Override team color
 │   └─ misc ▼
 │       ├─ Enable alternative crosshairs
 │       ├─ Disable crosshair color switch
@@ -94,10 +103,12 @@ SCRIPTS ▼
 │   ├─ Disable Leaving Battlefield
 │   └─ [WIP] One shot kill enemies
 └─ misc ▼
-    ├─ Nuke all 💀
+    ├─ Nuke (almost) all 💀
     ├─ Disable AI from using automatic rifles... ?
     ├─ Disable HEALTH powerups
     ├─ Disable Jabba's trapdoor
-    └─ Get selected command post ID
-        └─ CP ID
+    ├─ Get selected command post ID
+    │   └─ CP ID
+    └─ Generate checksum for custom data (profile algo)
+        └─ checksum
 </pre>
