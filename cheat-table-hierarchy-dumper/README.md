@@ -6,7 +6,7 @@ A command-line tool for dumping the hierarchical structure of a cheat table.
 
 > `python main.py path/to/cheat-table.ct`
 
-You can also dump the output into a file:
+You can also dump the output to a file:
 
 > `python main.py path/to/cheat-table.ct > ct_dump.txt`
 
